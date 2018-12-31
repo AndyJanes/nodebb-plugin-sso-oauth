@@ -50,7 +50,7 @@
 
 	var constants = Object.freeze({
 			type: 'oauth2',	// Either 'oauth' or 'oauth2'
-			name: 'adfs',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
+			name: 'nodebb',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
 			oauth: {
 				requestTokenURL: '',
 				accessTokenURL: '',
@@ -61,8 +61,8 @@
 			oauth2: {
 				authorizationURL: nconf.get('oauth:authURL'),
 				tokenURL: nconf.get('oauth:tokenURL'),
-				clientID: nconf.get('oauth:id'),	// don't change this line
-				clientSecret: nconf.get('oauth:secret'),	// don't change this line
+				clientID: nconf.get('oauth:clientID'),	// don't change this line
+				clientSecret: nconf.get('oauth:clientSecret'),	// don't change this line
 			},
 			userRoute: ''	// This is the address to your app's "user profile" API endpoint (expects JSON)
 		}),
