@@ -64,7 +64,7 @@
 				clientID: nconf.get('oauth:clientID'),	// don't change this line
 				clientSecret: nconf.get('oauth:clientSecret'),	// don't change this line
 			},
-			userRoute: 'nconf.get('oauth:userRoute')	// This is the address to your apps "user profile" API endpoint (expects JSON)
+			userRoute: nconf.get('oauth:userRoute')	// This is the address to your apps user_profile API endpoint (expects JSON)
 		}),
 		configOk = false,
 		OAuth = {}, passportOAuth, opts;
