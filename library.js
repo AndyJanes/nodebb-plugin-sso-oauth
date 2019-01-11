@@ -16,10 +16,10 @@
 		Step 4: If all goes well, you'll be able to login/register via your OAuth endpoint credentials.
 	*/
 
-	var User = module.parent.require('./user'),
-		Groups = module.parent.require('./groups'),
-		meta = module.parent.require('./meta'),
-		db = module.parent.require('../src/database'),
+	var User = require.main.require('./src/user'),
+		Groups = require.main.require('./src/groups'),
+		meta = require.main.require('./src/meta'),
+		db = require.main.require('./src/database'),
 		passport = module.parent.require('passport'),
 		fs = module.parent.require('fs'),
 		path = module.parent.require('path'),
@@ -27,7 +27,7 @@
 		winston = module.parent.require('winston'),
 		async = module.parent.require('async');
 
-	var authenticationController = module.parent.require('./controllers/authentication');
+	var authenticationController = require.main.require('./src/controllers/authentication');
 
 	/**
 	 * REMEMBER
@@ -68,7 +68,10 @@
 		}),
 		configOk = false,
 		OAuth = {}, passportOAuth, opts;
-
+	
+	winston.error('OAUth Type : ' + constants.type);
+	winston.error('Auth URL : ' + constants.oath2.tokenURL);
+	
 	if (!constants.name) {
 		winston.error('[sso-oauth] Please specify a name for your OAuth provider (library.js:32)');
 	} else if (!constants.type || (constants.type !== 'oauth' && constants.type !== 'oauth2')) {
