@@ -70,7 +70,7 @@
 		OAuth = {}, passportOAuth, opts;
 	
 	winston.error('OAUth Type : ' + constants.type);
-	winston.error('Auth URL : ' + constants.oath2.tokenURL);
+	winston.error('Auth URL : ' + constants.oauth2);
 	
 	if (!constants.name) {
 		winston.error('[sso-oauth] Please specify a name for your OAuth provider (library.js:32)');
